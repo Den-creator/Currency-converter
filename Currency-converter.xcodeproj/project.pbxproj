@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		00F2D93624044AA0006AE34A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F2D93424044AA0006AE34A /* Main.storyboard */; };
 		00F2D93824044AA2006AE34A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F2D93724044AA2006AE34A /* Assets.xcassets */; };
 		00F2D93B24044AA2006AE34A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F2D93924044AA2006AE34A /* LaunchScreen.storyboard */; };
+		00F2D94924052820006AE34A /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2D94824052820006AE34A /* CurrencyData.swift */; };
+		00F2D94B24052B97006AE34A /* CurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2D94A24052B97006AE34A /* CurrencyManager.swift */; };
+		00F2D95124055A17006AE34A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00F2D95024055A17006AE34A /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		00F2D93724044AA2006AE34A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00F2D93A24044AA2006AE34A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00F2D93C24044AA2006AE34A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00F2D94824052820006AE34A /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
+		00F2D94A24052B97006AE34A /* CurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F2D95124055A17006AE34A /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +62,41 @@
 		00F2D92D24044AA0006AE34A /* Currency-converter */ = {
 			isa = PBXGroup;
 			children = (
+				00F2D94524052792006AE34A /* Model */,
+				00F2D946240527BE006AE34A /* Controller */,
+				00F2D947240527D3006AE34A /* View */,
 				00F2D92E24044AA0006AE34A /* AppDelegate.swift */,
 				00F2D93024044AA0006AE34A /* SceneDelegate.swift */,
-				00F2D93224044AA0006AE34A /* ViewController.swift */,
-				00F2D93424044AA0006AE34A /* Main.storyboard */,
 				00F2D93724044AA2006AE34A /* Assets.xcassets */,
 				00F2D93924044AA2006AE34A /* LaunchScreen.storyboard */,
 				00F2D93C24044AA2006AE34A /* Info.plist */,
 			);
 			path = "Currency-converter";
+			sourceTree = "<group>";
+		};
+		00F2D94524052792006AE34A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00F2D94824052820006AE34A /* CurrencyData.swift */,
+				00F2D94A24052B97006AE34A /* CurrencyManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00F2D946240527BE006AE34A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00F2D93224044AA0006AE34A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00F2D947240527D3006AE34A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00F2D93424044AA0006AE34A /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +115,9 @@
 			dependencies = (
 			);
 			name = "Currency-converter";
+			packageProductDependencies = (
+				00F2D95024055A17006AE34A /* IQKeyboardManagerSwift */,
+			);
 			productName = "Currency-converter";
 			productReference = 00F2D92B24044AA0006AE34A /* Currency-converter.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +146,9 @@
 				Base,
 			);
 			mainGroup = 00F2D92224044AA0006AE34A;
+			packageReferences = (
+				00F2D94F24055A17006AE34A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 00F2D92C24044AA0006AE34A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F2D93324044AA0006AE34A /* ViewController.swift in Sources */,
+				00F2D94B24052B97006AE34A /* CurrencyManager.swift in Sources */,
 				00F2D92F24044AA0006AE34A /* AppDelegate.swift in Sources */,
+				00F2D94924052820006AE34A /* CurrencyData.swift in Sources */,
 				00F2D93124044AA0006AE34A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00F2D94F24055A17006AE34A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00F2D95024055A17006AE34A /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00F2D94F24055A17006AE34A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00F2D92324044AA0006AE34A /* Project object */;
 }

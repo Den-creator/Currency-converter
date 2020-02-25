@@ -33,7 +33,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-JE-zYG">
                                         <rect key="frame" x="0.0" y="361.5" width="394" height="100"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jdj-3M-JAo">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jdj-3M-JAo">
                                                 <rect key="frame" x="0.0" y="0.0" width="193" height="100"/>
                                                 <color key="backgroundColor" red="0.81176470588235294" green="0.70588235294117641" blue="0.58431372549019611" alpha="0.69999464897260277" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -41,7 +41,7 @@
                                                 </constraints>
                                                 <color key="textColor" name="Icon Color"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbV-gl-jm2">
                                                 <rect key="frame" x="201" y="0.0" width="193" height="100"/>
@@ -73,6 +73,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="currencyPicker" destination="lbV-gl-jm2" id="0xw-nb-XXx"/>
+                        <outlet property="labelOfResult" destination="QRC-7i-adF" id="toB-2N-0il"/>
                         <outlet property="textField" destination="Jdj-3M-JAo" id="jD5-8s-nz9"/>
                     </connections>
                 </viewController>
