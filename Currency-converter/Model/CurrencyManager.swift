@@ -10,26 +10,26 @@ import Foundation
 
 
 protocol CurrencyManagerDelegate {
-    func didUpdatePrice(price: String)
+    func didUpdatePrice(price: Double)
     func didFailWithError(error: Error)
 }
 
 struct CurrencyManager {
     
-    var selectedCurrency = "USD"
+    var selectedCurrency = C.usd
     
     var delegate: CurrencyManagerDelegate?
     
-    let baseURL = "https://openexchangerates.org/api/latest.json?app_id="
-    let apiKey = "3d9f1644b6d94f658661c9e85eb82416"
-    let currencyArray = ["USD", "EUR", "PLN", "RUB"]
+    let baseURL = C.baseURL
+    let apiKey = C.apiKey
+    let currencyArray = [C.usd, C.eur, C.rub, C.pln, C.cny, C.gbp, C.chf, C.jpy, C.aud]
     
     mutating func getSelectedCurrency(for currency: String) {
         selectedCurrency = currency
     }
     
     func getCurrencyPrice(for currency: String) {
-                
+        
         let urlString = baseURL + apiKey
         print(urlString)
         
@@ -43,8 +43,7 @@ struct CurrencyManager {
                 }
                 if let safeData = data {
                     if let currencyPrice = self.parseJSON(safeData) {
-                        let priceString = String(format: "%.2f", currencyPrice)
-                        self.delegate?.didUpdatePrice(price: priceString)
+                        self.delegate?.didUpdatePrice(price: currencyPrice)
                     }
                     
                 }
@@ -64,24 +63,39 @@ struct CurrencyManager {
             let usdToUAH = decodedData.rates.UAH
             
             switch selectedCurrency {
-            case "USD":
+            case C.usd:
                 let usdToSelectedCurrency = decodedData.rates.USD
                 return usdToUAH / usdToSelectedCurrency
-            case "EUR":
+            case C.eur:
                 let usdToSelectedCurrency = decodedData.rates.EUR
                 return usdToUAH / usdToSelectedCurrency
-            case "PLN":
+            case C.rub:
+                let usdToSelectedCurrency = decodedData.rates.RUB
+                return usdToUAH / usdToSelectedCurrency
+            case C.pln:
                 let usdToSelectedCurrency = decodedData.rates.PLN
                 return usdToUAH / usdToSelectedCurrency
-            case "RUB":
-                let usdToSelectedCurrency = decodedData.rates.RUB
+            case C.cny:
+                let usdToSelectedCurrency = decodedData.rates.CNY
+                return usdToUAH / usdToSelectedCurrency
+            case C.gbp:
+                let usdToSelectedCurrency = decodedData.rates.GBP
+                return usdToUAH / usdToSelectedCurrency
+            case C.chf:
+                let usdToSelectedCurrency = decodedData.rates.CHF
+                return usdToUAH / usdToSelectedCurrency
+            case C.jpy:
+                let usdToSelectedCurrency = decodedData.rates.JPY
+                return usdToUAH / usdToSelectedCurrency
+            case C.aud:
+                let usdToSelectedCurrency = decodedData.rates.AUD
                 return usdToUAH / usdToSelectedCurrency
             default:
                 let usdToSelectedCurrency = decodedData.rates.USD
                 return usdToUAH / usdToSelectedCurrency
             }
             
-            } catch {
+        } catch {
             delegate?.didFailWithError(error: error)
             return nil
         }

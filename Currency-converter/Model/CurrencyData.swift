@@ -13,6 +13,7 @@ struct CurrencyData: Codable {
 }
 
 struct Rates: Codable {
-    let UAH, EUR, PLN, RUB, USD : Double
+    let UAH : Double
+    let USD, EUR, RUB, PLN, CNY, GBP, CHF, JPY, AUD : Double
 }
 
