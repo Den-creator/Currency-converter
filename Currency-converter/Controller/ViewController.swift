@@ -10,23 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textFielForQuantity: UITextField!
     @IBOutlet weak var currencyPicker: UIPickerView!
     @IBOutlet weak var labelOfResult: UILabel!
     
     var currencyManager = CurrencyManager()
     var selectedCurrency = "USD"
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.layer.cornerRadius = 20
-        currencyPicker.setValue(#colorLiteral(red: 0.9607720971, green: 0.8015490174, blue: 0.6576380134, alpha: 1), forKey: "textColor")
-        
+        textFielForQuantity.layer.cornerRadius = 20
+       
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
         currencyManager.delegate = self
-        textField.delegate = self
+        textFielForQuantity.delegate = self
     }
+
     
 }
 
@@ -50,9 +50,6 @@ extension ViewController: UIPickerViewDataSource {
 
 extension ViewController: UIPickerViewDelegate {
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencyManager.currencyArray[row]
-    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedCurrency = currencyManager.currencyArray[row]
@@ -60,7 +57,31 @@ extension ViewController: UIPickerViewDelegate {
         currencyManager.getCurrencyPrice(for: selectedCurrency)
     }
     
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        var pickerLabel = UILabel()
+        if let v = view as? UILabel { pickerLabel = v }
+        
+            if textFielForQuantity.frame.height == 100 {
+                pickerLabel.font = UIFont (name: "Didot", size: 25)
+            } else if textFielForQuantity.frame.height == 200 {
+                pickerLabel.font = UIFont (name: "Didot", size: 50)
+            }
+        
+        pickerLabel.textColor = #colorLiteral(red: 0.9607720971, green: 0.8015490174, blue: 0.6576380134, alpha: 1)
+        pickerLabel.text =  currencyManager.currencyArray[row]
+        pickerLabel.textAlignment = .center
+        return pickerLabel
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        
+        if textFielForQuantity.frame.height == 200 { return 60 }
+        else { return 25 }
+    }
+
 }
+
 
 
 //MARK: - CurrencyManagerDelegate
@@ -71,12 +92,15 @@ extension ViewController: CurrencyManagerDelegate {
         
         DispatchQueue.main.async {
             
-            if let quantityOfCurrency = Double(self.textField.text!) {
-                let result = quantityOfCurrency * price
+            let quantityOfCurrency = NumberFormatter().number(from: self.textFielForQuantity.text!)
+            
+            if let number = quantityOfCurrency {
+                let doubleValue = Double(truncating: number)
+                let result = doubleValue * price
                 let resultString = String(format: "%.2f", result)
                 self.labelOfResult.text = resultString + " " + "UAH"
                 
-            } else {
+            }   else {
                 self.labelOfResult.text = "0" + " " + "UAH"
             }
         }

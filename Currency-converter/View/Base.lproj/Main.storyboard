@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,53 +11,107 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Currency_converter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-bm-Ltv">
-                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <rect key="frame" x="10" y="10" width="748" height="1004"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENCY converter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Za-JT-P1P">
-                                        <rect key="frame" x="77" y="0.0" width="240" height="200"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENCY converter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Za-JT-P1P">
+                                        <rect key="frame" x="132" y="0.0" width="484.5" height="350"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="Dtz-ui-oHI"/>
+                                            <constraint firstAttribute="height" constant="350" id="d6M-0I-2NK"/>
                                             <constraint firstAttribute="height" constant="200" id="dj6-ME-qTM"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="kMO-j7-Xf0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="40"/>
                                         <color key="textColor" red="0.96078431372549022" green="0.80392156862745101" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="d6M-0I-2NK"/>
+                                                <exclude reference="kMO-j7-Xf0"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="80"/>
+                                            <mask key="constraints">
+                                                <include reference="d6M-0I-2NK"/>
+                                                <exclude reference="dj6-ME-qTM"/>
+                                                <include reference="kMO-j7-Xf0"/>
+                                            </mask>
+                                        </variation>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-JE-zYG">
-                                        <rect key="frame" x="0.0" y="374" width="394" height="100"/>
+                                        <rect key="frame" x="29" y="452" width="690" height="200"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jdj-3M-JAo">
-                                                <rect key="frame" x="0.0" y="0.0" width="193" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                                 <color key="backgroundColor" red="0.81176470588235294" green="0.70588235294117641" blue="0.58431372549019611" alpha="0.69999464897260277" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="YnZ-f0-wa3"/>
+                                                    <constraint firstAttribute="height" constant="200" id="po3-wC-e9f"/>
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="po3-wC-e9f"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                                    <mask key="constraints">
+                                                        <exclude reference="YnZ-f0-wa3"/>
+                                                        <include reference="po3-wC-e9f"/>
+                                                    </mask>
+                                                </variation>
                                             </textField>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbV-gl-jm2">
-                                                <rect key="frame" x="201" y="0.0" width="193" height="100"/>
+                                            <pickerView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbV-gl-jm2">
+                                                <rect key="frame" x="370" y="0.0" width="320" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="n40-by-HNG"/>
+                                                    <constraint firstAttribute="height" constant="200" id="shq-Ck-cQa"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="shq-Ck-cQa"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="n40-by-HNG"/>
+                                                        <include reference="shq-Ck-cQa"/>
+                                                    </mask>
+                                                </variation>
                                             </pickerView>
                                         </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" spacing="50"/>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 UAH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRC-7i-adF">
-                                        <rect key="frame" x="136" y="698" width="122.5" height="100"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 UAH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRC-7i-adF">
+                                        <rect key="frame" x="251.5" y="854" width="245" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="AnH-Qa-RcE"/>
+                                            <constraint firstAttribute="height" constant="150" id="SYm-h1-ZLG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="40"/>
                                         <color key="textColor" red="0.96078431372549022" green="0.80392156862745101" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="SYm-h1-ZLG"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="80"/>
+                                            <mask key="constraints">
+                                                <exclude reference="AnH-Qa-RcE"/>
+                                                <include reference="SYm-h1-ZLG"/>
+                                            </mask>
+                                        </variation>
                                     </label>
                                 </subviews>
                             </stackView>
@@ -74,7 +128,7 @@
                     <connections>
                         <outlet property="currencyPicker" destination="lbV-gl-jm2" id="0xw-nb-XXx"/>
                         <outlet property="labelOfResult" destination="QRC-7i-adF" id="toB-2N-0il"/>
-                        <outlet property="textField" destination="Jdj-3M-JAo" id="jD5-8s-nz9"/>
+                        <outlet property="textFielForQuantity" destination="Jdj-3M-JAo" id="jD5-8s-nz9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

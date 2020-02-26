@@ -31,6 +31,7 @@
 		00F2D94824052820006AE34A /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
 		00F2D94A24052B97006AE34A /* CurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManager.swift; sourceTree = "<group>"; };
 		00F2D9542405A1FA006AE34A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00F2D9562406E263006AE34A /* Converter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Converter.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 		00F2D92224044AA0006AE34A = {
 			isa = PBXGroup;
 			children = (
+				00F2D9562406E263006AE34A /* Converter.entitlements */,
 				00F2D92D24044AA0006AE34A /* Currency-converter */,
 				00F2D92C24044AA0006AE34A /* Products */,
 			);
@@ -65,8 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				00F2D94524052792006AE34A /* Model */,
-				00F2D946240527BE006AE34A /* Controller */,
 				00F2D947240527D3006AE34A /* View */,
+				00F2D946240527BE006AE34A /* Controller */,
 				00F2D92E24044AA0006AE34A /* AppDelegate.swift */,
 				00F2D93024044AA0006AE34A /* SceneDelegate.swift */,
 				00F2D9542405A1FA006AE34A /* Constants.swift */,
@@ -105,9 +107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00F2D92A24044AA0006AE34A /* Currency-converter */ = {
+		00F2D92A24044AA0006AE34A /* Converter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00F2D93F24044AA2006AE34A /* Build configuration list for PBXNativeTarget "Currency-converter" */;
+			buildConfigurationList = 00F2D93F24044AA2006AE34A /* Build configuration list for PBXNativeTarget "Converter" */;
 			buildPhases = (
 				00F2D92724044AA0006AE34A /* Sources */,
 				00F2D92824044AA0006AE34A /* Frameworks */,
@@ -117,7 +119,7 @@
 			);
 			dependencies = (
 			);
-			name = "Currency-converter";
+			name = Converter;
 			packageProductDependencies = (
 				00F2D95024055A17006AE34A /* IQKeyboardManagerSwift */,
 			);
@@ -140,7 +142,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 00F2D92624044AA0006AE34A /* Build configuration list for PBXProject "Currency-converter" */;
+			buildConfigurationList = 00F2D92624044AA0006AE34A /* Build configuration list for PBXProject "Converter" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -156,7 +158,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00F2D92A24044AA0006AE34A /* Currency-converter */,
+				00F2D92A24044AA0006AE34A /* Converter */,
 			);
 		};
 /* End PBXProject section */
@@ -328,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Converter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58HXQ9UR8R;
 				INFOPLIST_FILE = "Currency-converter/Info.plist";
@@ -337,8 +340,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.denis.Currency-converter";
 				PRODUCT_NAME = Converter;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -346,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Converter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58HXQ9UR8R;
 				INFOPLIST_FILE = "Currency-converter/Info.plist";
@@ -355,15 +360,16 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.denis.Currency-converter";
 				PRODUCT_NAME = Converter;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00F2D92624044AA0006AE34A /* Build configuration list for PBXProject "Currency-converter" */ = {
+		00F2D92624044AA0006AE34A /* Build configuration list for PBXProject "Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00F2D93D24044AA2006AE34A /* Debug */,
@@ -372,7 +378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00F2D93F24044AA2006AE34A /* Build configuration list for PBXNativeTarget "Currency-converter" */ = {
+		00F2D93F24044AA2006AE34A /* Build configuration list for PBXNativeTarget "Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00F2D94024044AA2006AE34A /* Debug */,
