@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		005020B724088078004BE7A1 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005020B624088078004BE7A1 /* ApiKey.swift */; };
 		00F2D92F24044AA0006AE34A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2D92E24044AA0006AE34A /* AppDelegate.swift */; };
 		00F2D93124044AA0006AE34A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2D93024044AA0006AE34A /* SceneDelegate.swift */; };
 		00F2D93324044AA0006AE34A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2D93224044AA0006AE34A /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		005020B624088078004BE7A1 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		00F2D92B24044AA0006AE34A /* Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Converter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F2D92E24044AA0006AE34A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00F2D93024044AA0006AE34A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				00F2D92E24044AA0006AE34A /* AppDelegate.swift */,
 				00F2D93024044AA0006AE34A /* SceneDelegate.swift */,
 				00F2D9542405A1FA006AE34A /* Constants.swift */,
+				005020B624088078004BE7A1 /* ApiKey.swift */,
 				00F2D93724044AA2006AE34A /* Assets.xcassets */,
 				00F2D93924044AA2006AE34A /* LaunchScreen.storyboard */,
 				00F2D93C24044AA2006AE34A /* Info.plist */,
@@ -185,6 +188,7 @@
 				00F2D94B24052B97006AE34A /* CurrencyManager.swift in Sources */,
 				00F2D92F24044AA0006AE34A /* AppDelegate.swift in Sources */,
 				00F2D94924052820006AE34A /* CurrencyData.swift in Sources */,
+				005020B724088078004BE7A1 /* ApiKey.swift in Sources */,
 				00F2D93124044AA0006AE34A /* SceneDelegate.swift in Sources */,
 				00F2D9552405A1FA006AE34A /* Constants.swift in Sources */,
 			);

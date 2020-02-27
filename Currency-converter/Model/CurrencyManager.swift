@@ -21,7 +21,7 @@ struct CurrencyManager {
     var delegate: CurrencyManagerDelegate?
     
     let baseURL = C.baseURL
-    let apiKey = C.apiKey
+    let apiKey = ApiKey.apiKey
     let currencyArray = [C.usd, C.eur, C.rub, C.pln, C.cny, C.gbp, C.chf, C.jpy, C.aud]
     
     mutating func getSelectedCurrency(for currency: String) {
@@ -31,7 +31,6 @@ struct CurrencyManager {
     func getCurrencyPrice(for currency: String) {
         
         let urlString = baseURL + apiKey
-        print(urlString)
         
         if let url = URL(string: urlString) {
             
