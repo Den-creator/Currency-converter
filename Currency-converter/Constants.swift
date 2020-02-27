@@ -9,6 +9,7 @@
 import Foundation
 
 struct C {
+    static let uah = "UAH"
     static let usd = "USD"
     static let eur = "EUR"
     static let rub = "RUB"
@@ -19,6 +20,10 @@ struct C {
     static let jpy = "JPY"
     static let aud = "AUD"
     
+    static let iPad = "iPad"
+    
     static let apiKey = "3d9f1644b6d94f658661c9e85eb82416"
     static let baseURL = "https://openexchangerates.org/api/latest.json?app_id="
+    
+    static let didot = "Didot"
 }

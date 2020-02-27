@@ -15,18 +15,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelOfResult: UILabel!
     
     var currencyManager = CurrencyManager()
+    var device = UIDevice()
     var selectedCurrency = "USD"
-        
+    var iPad = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFielForQuantity.layer.cornerRadius = 20
-       
+        textFielForQuantity.layer.cornerRadius = view.frame.height / 35
+        
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
         currencyManager.delegate = self
         textFielForQuantity.delegate = self
+        
+        if device.model == C.iPad {iPad = true}
     }
-
+    
     
 }
 
@@ -62,11 +66,12 @@ extension ViewController: UIPickerViewDelegate {
         var pickerLabel = UILabel()
         if let v = view as? UILabel { pickerLabel = v }
         
-            if textFielForQuantity.frame.height == 100 {
-                pickerLabel.font = UIFont (name: "Didot", size: 25)
-            } else if textFielForQuantity.frame.height == 200 {
-                pickerLabel.font = UIFont (name: "Didot", size: 50)
-            }
+        if iPad {
+            pickerLabel.font = UIFont (name: C.didot, size: 50)
+        } else {
+            pickerLabel.font = UIFont (name: C.didot, size: 25)
+            
+        }
         
         pickerLabel.textColor = #colorLiteral(red: 0.9607720971, green: 0.8015490174, blue: 0.6576380134, alpha: 1)
         pickerLabel.text =  currencyManager.currencyArray[row]
@@ -76,10 +81,11 @@ extension ViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         
-        if textFielForQuantity.frame.height == 200 { return 60 }
+        if iPad { return 60 }
         else { return 25 }
+        
     }
-
+    
 }
 
 
@@ -92,16 +98,13 @@ extension ViewController: CurrencyManagerDelegate {
         
         DispatchQueue.main.async {
             
-            let quantityOfCurrency = NumberFormatter().number(from: self.textFielForQuantity.text!)
-            
-            if let number = quantityOfCurrency {
-                let doubleValue = Double(truncating: number)
+            if let quantityOfCurrency = self.textFielForQuantity.text {
+                let doubleValue = (quantityOfCurrency as NSString).doubleValue
                 let result = doubleValue * price
                 let resultString = String(format: "%.2f", result)
-                self.labelOfResult.text = resultString + " " + "UAH"
-                
-            }   else {
-                self.labelOfResult.text = "0" + " " + "UAH"
+                self.labelOfResult.text = resultString + " " + C.uah
+            } else {
+                self.labelOfResult.text = "0" + " " + C.uah
             }
         }
     }
